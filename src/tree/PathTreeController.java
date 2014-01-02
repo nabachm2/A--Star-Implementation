@@ -1,13 +1,8 @@
 package tree;
 
-import java.awt.Point;
-import java.awt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.LinkedList;
-
-import a_star.Mesh;
 
 import math.Vector2f;
 import math.Vector3f;

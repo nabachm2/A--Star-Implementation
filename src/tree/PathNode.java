@@ -1,9 +1,7 @@
 package tree;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
-import a_star.Mesh;
 import math.Vector3f;
 
 public class PathNode {

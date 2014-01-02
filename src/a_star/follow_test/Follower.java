@@ -1,112 +1,129 @@
 package a_star.follow_test;
 
 import java.awt.Color;
-import java.awt.Graphics2D;
+import java.awt.Graphics;
+import java.awt.geom.Point2D;
 import java.util.ArrayList;
-import java.util.Random;
-
-import math.Vector3f;
+import java.util.LinkedList;
 
 import test.core.Drawable;
-import tree.NavMesh;
-import tree.PathTreeController;
+import test.core.TestPanel;
+import a_star.AStarMesh;
+import a_star.AStarNode;
+import a_star.PathingAlgorithms;
 
+
+/**
+ * This class was created to test the path finding of moving object.
+ * A Follower looks for the closest Mover within a given SEARCH_RADIUS
+ * and if it finds one, it will follow it by continually updating its path
+ * 
+ * @author Nicholas
+ *
+ */
 public class Follower implements Drawable {
 
+	//the time between path recalculations
 	private final static float UPDATE_TIME = .75f;
+	//the max search radius
 	private final static float SEARCH_RADIUS = 100 * 100;
+	//the max follow radius
 	private final static float FOLLOW_RADIUS = 300 * 300;
 	
-	private static final Random s = new Random(6204L);
+	//reference to the test window
+	private TestPanel mainWindow;
 	
-	private Mover mover;
-	private boolean follower;
+	//reference to all the movers
+	private ArrayList<Mover> movers;
+	//the current mover being followed
+	private Mover currentMover;
 	
-	private ArrayList<Vector3f> path;
+	//the followers current path
+	private LinkedList<AStarNode> path;
 	private int pathIndex;
+	private float moveTimer;
 	
-	private Vector3f originalLocation;
-	private Vector3f location;
-	private Vector3f direction;
+	private Point2D originalLocation;
+	private Point2D location;
 	
 	private float updateCounter;
-	private Random r;
 	
-	public Follower(Vector3f start, Mover m) {
-		r = new Random(s.nextLong());
-		originalLocation = new Vector3f(start);
-		location = start;
-		mover = m;
-		do {
-			try {
-				Vector3f end = new Vector3f(r.nextInt(190 * 6) + 2, 0, r.nextInt(90 * 6) + 2);
-				ArrayList<NavMesh> c = PathTreeController.getInstance().createCorridor(location, end);
-				path = PathTreeController.getInstance().createPath(c, new Vector3f(location), end);
-			} catch (IndexOutOfBoundsException ex) { ex.printStackTrace();}
-		} while (path == null || path.size() == 0);
+	/**
+	 * Creates a follower at the given start position
+	 * 
+	 * @param mainWindow reference to the test window
+	 * @param start the start location
+	 * @param movers a list of all movers
+	 */
+	public Follower(TestPanel mainWindow, Point2D start, ArrayList<Mover> movers) {
+		originalLocation = new Point2D.Double(start.getX(), start.getY());
+		this.movers = movers;
 		
-		location = new Vector3f(start);
-		direction = path.get(1).subtract(path.get(0)).normalizeLocal();
+		location = new Point2D.Double(start.getX(), start.getY());
+		this.mainWindow = mainWindow;
 	}
 	
 	@Override
-	public void draw(Graphics2D g) {
-		g.setColor(Color.ORANGE);
-		g.fillOval((int) location.x - 2, (int) location.z - 2, 4, 4);
+	public void draw(Graphics g) {
+		g.setColor(Color.GREEN);
+		g.fillOval((int) location.getX() - 4, (int) location.getY() - 4, 8, 8);
+	}
+	
+	public void clearPath() {
+		pathIndex = 0;
+		path = null;
+		moveTimer = 0;
 	}
 
 	@Override
 	public void act(float timePassed) {
-		final float SPEED = 60;
-		location.x += direction.x * timePassed * SPEED;
-		location.y += direction.y * timePassed * SPEED;
-		location.z += direction.z * timePassed * SPEED;
-		
-		if (!follower && location.distanceSquared(mover.getLocation()) < SEARCH_RADIUS) {
-			follower = true;
-			originalLocation.set(location);
+		if (currentMover == null) { //we are not following anything...
+			for (Mover m : movers)
+				if (m.getLocation().distanceSq(location) < SEARCH_RADIUS) //found a mover to follow!
+					currentMover = m;
+	
+			originalLocation.setLocation(location);
 		}
-		if (location.distanceSquared(originalLocation) > FOLLOW_RADIUS)
-			follower = false;
+		if (location.distanceSq(originalLocation) > FOLLOW_RADIUS) { //the mover is too far away to follow
+			currentMover = null;
+			clearPath();
+		}
 		
 		updateCounter += timePassed;
-		if (follower && updateCounter > UPDATE_TIME) {
+		if (currentMover != null && updateCounter > UPDATE_TIME) { //its time to recalculate the path
 			updateCounter = 0;
-			pathIndex = 0;
-			path.clear();
-			do {
-				try {
-					Vector3f end = new Vector3f(mover.getLocation());
-					ArrayList<NavMesh> c = PathTreeController.getInstance().createCorridor(location, end);
-					path = PathTreeController.getInstance().createPath(c, new Vector3f(location), end);
-				} catch (IndexOutOfBoundsException ex) { ex.printStackTrace();}
-			} while (path.size() == 0);
-	
-			direction = path.get(pathIndex + 1).subtract(path.get(pathIndex)).normalizeLocal();
+			
+			clearPath();
+			AStarMesh start = mainWindow.getMeshForPoint(location);
+			AStarMesh end = mainWindow.getMeshForPoint(currentMover.getLocation());
+			
+			path = PathingAlgorithms.aStarPath(start, end);
 		}
 			
-		
-		if (location.distanceSquared(path.get(pathIndex + 1)) < 4) {
-			location.set(path.get(pathIndex + 1));
-			pathIndex ++;
-			if (pathIndex == path.size() - 1) {			
-				pathIndex = 0;
-				path.clear();
-				do {
-					try {
-						Vector3f end;
-						if (follower) {
-							end = new Vector3f(mover.getLocation());
-						} else {
-							end = new Vector3f(r.nextInt(190 * 6) + 2, 0, r.nextInt(90 * 6) + 2);
-						}
-						
-						ArrayList<NavMesh> c = PathTreeController.getInstance().createCorridor(location, end);
-						path = PathTreeController.getInstance().createPath(c, new Vector3f(location), end);
-					} catch (IndexOutOfBoundsException ex) { }
-				} while (path.size() == 0);
+		if (path != null && path.size() > 1) { //we have a path to follow
+			final float SPEED = 9;
+			moveTimer += timePassed * SPEED;
+			
+			AStarMesh m1 = (AStarMesh) path.get(pathIndex);
+			AStarMesh m2 = (AStarMesh) path.get(pathIndex + 1);
+			
+			//calculate the direction
+			double dirx = -m1.getCenter().getX() + m2.getCenter().getX();
+			double diry = -m1.getCenter().getY() + m2.getCenter().getY();
+			
+			//calculate the paramartized location
+			double x = m1.getCenter().getX() + dirx * moveTimer;
+			double y = m1.getCenter().getY() + diry * moveTimer;
+			location.setLocation(x, y);
+			
+			if (moveTimer > 1) { //we reached the next node in our path
+				moveTimer = 0;
+				location.setLocation(m2.getCenter());
+				pathIndex ++;
+				if (pathIndex == path.size() - 1) 
+					clearPath();
 			}
-			direction = path.get(pathIndex + 1).subtract(path.get(pathIndex)).normalizeLocal();
+			
 		}	
 	}
 

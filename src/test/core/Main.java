@@ -5,8 +5,8 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
-import a_star.AStarMesh;
-import a_star.MeshCreator;
+import a_star.example.AStarMesh;
+import a_star.example.MeshCreator;
 
 /**
  * Sets up a basic window with a clickable mesh to find the shortest

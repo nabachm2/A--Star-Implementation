@@ -8,9 +8,9 @@ import java.util.Random;
 
 import test.core.Drawable;
 import test.core.TestPanel;
-import a_star.AStarMesh;
 import a_star.AStarNode;
 import a_star.PathingAlgorithms;
+import a_star.example.AStarMesh;
 
 /**
  * This class was created to test the path finding of moving object.

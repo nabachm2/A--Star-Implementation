@@ -1,4 +1,4 @@
-package a_star;
+package a_star.example;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -6,6 +6,8 @@ import java.awt.Point;
 import java.awt.Polygon;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
+
+import a_star.AStarNode;
 
 /**
  * An example of a mesh based graph, which implements AStarNode,

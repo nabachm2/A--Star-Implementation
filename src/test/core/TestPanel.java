@@ -13,9 +13,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import javax.swing.JPanel;
 
-import a_star.AStarMesh;
 import a_star.AStarNode;
 import a_star.PathingAlgorithms;
+import a_star.example.AStarMesh;
 import a_star.follow_test.Follower;
 import a_star.follow_test.Mover;
 

@@ -1,4 +1,4 @@
-package a_star;
+package a_star.example;
 
 import java.awt.Point;
 import java.util.ArrayList;

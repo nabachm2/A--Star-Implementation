@@ -1,0 +1,72 @@
+\hypertarget{classa__star_1_1example_1_1_mesh_creator}{\section{a\-\_\-star.\-example.\-Mesh\-Creator Class Reference}
+\label{classa__star_1_1example_1_1_mesh_creator}\index{a\-\_\-star.\-example.\-Mesh\-Creator@{a\-\_\-star.\-example.\-Mesh\-Creator}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classa__star_1_1example_1_1_a_star_mesh}{A\-Star\-Mesh}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \hyperlink{classa__star_1_1example_1_1_mesh_creator_a4e34278d5909159cad43e383c05d1057}{create\-Meshes} (boolean\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} grid)
+\item 
+\hypertarget{classa__star_1_1example_1_1_mesh_creator_acd2e030759bffe8e4a02074fb2539809}{static boolean\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries test\-Map1} ()}\label{classa__star_1_1example_1_1_mesh_creator_acd2e030759bffe8e4a02074fb2539809}
+
+\item 
+static boolean\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \hyperlink{classa__star_1_1example_1_1_mesh_creator_a6ed3493a725ac4ecb6f60c33023a9ad1}{test\-Map2} ()
+\item 
+static boolean\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \hyperlink{classa__star_1_1example_1_1_mesh_creator_a453963a690b84c9d50fe6a9ef8b64fab}{test\-Map3} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides methods to create a grid of meshes to test the pathfinding algorithms. These grids will already set up the graph, by setting adjacent meshes.
+
+\begin{DoxyAuthor}{Author}
+Nicholas 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classa__star_1_1example_1_1_mesh_creator_a4e34278d5909159cad43e383c05d1057}{\index{a\-\_\-star\-::example\-::\-Mesh\-Creator@{a\-\_\-star\-::example\-::\-Mesh\-Creator}!create\-Meshes@{create\-Meshes}}
+\index{create\-Meshes@{create\-Meshes}!a_star::example::MeshCreator@{a\-\_\-star\-::example\-::\-Mesh\-Creator}}
+\subsubsection[{create\-Meshes}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-Star\-Mesh} \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} a\-\_\-star.\-example.\-Mesh\-Creator.\-create\-Meshes (
+\begin{DoxyParamCaption}
+\item[{boolean}]{grid\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classa__star_1_1example_1_1_mesh_creator_a4e34278d5909159cad43e383c05d1057}
+Given a grid of booleans, this method builds the connected graph where for any grid\mbox{[}x\mbox{]}\mbox{[}y\mbox{]} == true, a square mesh will be created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The grid of \hyperlink{classa__star_1_1example_1_1_a_star_mesh}{A\-Star\-Mesh} connected as a graph structure. 
+\end{DoxyReturn}
+\hypertarget{classa__star_1_1example_1_1_mesh_creator_a6ed3493a725ac4ecb6f60c33023a9ad1}{\index{a\-\_\-star\-::example\-::\-Mesh\-Creator@{a\-\_\-star\-::example\-::\-Mesh\-Creator}!test\-Map2@{test\-Map2}}
+\index{test\-Map2@{test\-Map2}!a_star::example::MeshCreator@{a\-\_\-star\-::example\-::\-Mesh\-Creator}}
+\subsubsection[{test\-Map2}]{\setlength{\rightskip}{0pt plus 5cm}static boolean \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} a\-\_\-star.\-example.\-Mesh\-Creator.\-test\-Map2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classa__star_1_1example_1_1_mesh_creator_a6ed3493a725ac4ecb6f60c33023a9ad1}
+Creates a 200, 100 grid with no holes
+
+\begin{DoxyReturn}{Returns}
+matrix of boolean values 
+\end{DoxyReturn}
+\hypertarget{classa__star_1_1example_1_1_mesh_creator_a453963a690b84c9d50fe6a9ef8b64fab}{\index{a\-\_\-star\-::example\-::\-Mesh\-Creator@{a\-\_\-star\-::example\-::\-Mesh\-Creator}!test\-Map3@{test\-Map3}}
+\index{test\-Map3@{test\-Map3}!a_star::example::MeshCreator@{a\-\_\-star\-::example\-::\-Mesh\-Creator}}
+\subsubsection[{test\-Map3}]{\setlength{\rightskip}{0pt plus 5cm}static boolean \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} a\-\_\-star.\-example.\-Mesh\-Creator.\-test\-Map3 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classa__star_1_1example_1_1_mesh_creator_a453963a690b84c9d50fe6a9ef8b64fab}
+Creates a 200, 100 grid with random holes
+
+\begin{DoxyReturn}{Returns}
+matrix of boolean values 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/a\-\_\-star/example/Mesh\-Creator.\-java\end{DoxyCompactItemize}

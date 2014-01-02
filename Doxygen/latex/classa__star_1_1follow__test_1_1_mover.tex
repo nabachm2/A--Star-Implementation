@@ -1,0 +1,102 @@
+\hypertarget{classa__star_1_1follow__test_1_1_mover}{\section{a\-\_\-star.\-follow\-\_\-test.\-Mover Class Reference}
+\label{classa__star_1_1follow__test_1_1_mover}\index{a\-\_\-star.\-follow\-\_\-test.\-Mover@{a\-\_\-star.\-follow\-\_\-test.\-Mover}}
+}
+Inheritance diagram for a\-\_\-star.\-follow\-\_\-test.\-Mover\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classa__star_1_1follow__test_1_1_mover}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classa__star_1_1follow__test_1_1_mover_a1ccfcf1738bcc78c85f923873e517c0d}{Mover} (\hyperlink{classtest_1_1core_1_1_test_panel}{Test\-Panel} main\-Window, Point2\-D start)
+\item 
+void \hyperlink{classa__star_1_1follow__test_1_1_mover_ac197bf1d7788aeffec0e33dfa745c190}{draw} (Graphics g)
+\item 
+void \hyperlink{classa__star_1_1follow__test_1_1_mover_a90243b495db124b15fba9afc79cbcfcf}{clear\-Path} ()
+\item 
+void \hyperlink{classa__star_1_1follow__test_1_1_mover_a86591ca1d9f386d394fc6f02cac8f15f}{act} (float time\-Passed)
+\item 
+\hypertarget{classa__star_1_1follow__test_1_1_mover_a16892b4b0ba3f7bd9296bfe1e0b0fd1e}{Point2\-D {\bfseries get\-Location} ()}\label{classa__star_1_1follow__test_1_1_mover_a16892b4b0ba3f7bd9296bfe1e0b0fd1e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class was created to test the path finding of moving object. A \hyperlink{classa__star_1_1follow__test_1_1_mover}{Mover} (if it doesn't have a destination) will calculate a path to a random location and move to it. Movers will be \char`\"{}chased\char`\"{} by Followers if they are close enough
+
+\begin{DoxyAuthor}{Author}
+Nicholas 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classa__star_1_1follow__test_1_1_mover_a1ccfcf1738bcc78c85f923873e517c0d}{\index{a\-\_\-star\-::follow\-\_\-test\-::\-Mover@{a\-\_\-star\-::follow\-\_\-test\-::\-Mover}!Mover@{Mover}}
+\index{Mover@{Mover}!a_star::follow_test::Mover@{a\-\_\-star\-::follow\-\_\-test\-::\-Mover}}
+\subsubsection[{Mover}]{\setlength{\rightskip}{0pt plus 5cm}a\-\_\-star.\-follow\-\_\-test.\-Mover.\-Mover (
+\begin{DoxyParamCaption}
+\item[{{\bf Test\-Panel}}]{main\-Window, }
+\item[{Point2\-D}]{start}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1follow__test_1_1_mover_a1ccfcf1738bcc78c85f923873e517c0d}
+Creates a mover at the given location
+
+
+\begin{DoxyParams}{Parameters}
+{\em main\-Window} & a reference to the test window \\
+\hline
+{\em start} & the starting location \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classa__star_1_1follow__test_1_1_mover_a86591ca1d9f386d394fc6f02cac8f15f}{\index{a\-\_\-star\-::follow\-\_\-test\-::\-Mover@{a\-\_\-star\-::follow\-\_\-test\-::\-Mover}!act@{act}}
+\index{act@{act}!a_star::follow_test::Mover@{a\-\_\-star\-::follow\-\_\-test\-::\-Mover}}
+\subsubsection[{act}]{\setlength{\rightskip}{0pt plus 5cm}void a\-\_\-star.\-follow\-\_\-test.\-Mover.\-act (
+\begin{DoxyParamCaption}
+\item[{float}]{time\-Passed}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1follow__test_1_1_mover_a86591ca1d9f386d394fc6f02cac8f15f}
+Acts the object, using the amount of time\-Passed as a reference
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\-Passed} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interfacetest_1_1core_1_1_drawable_a683aa938b8c5ade02acc08f3bafca3f5}{test.\-core.\-Drawable}.
+
+\hypertarget{classa__star_1_1follow__test_1_1_mover_a90243b495db124b15fba9afc79cbcfcf}{\index{a\-\_\-star\-::follow\-\_\-test\-::\-Mover@{a\-\_\-star\-::follow\-\_\-test\-::\-Mover}!clear\-Path@{clear\-Path}}
+\index{clear\-Path@{clear\-Path}!a_star::follow_test::Mover@{a\-\_\-star\-::follow\-\_\-test\-::\-Mover}}
+\subsubsection[{clear\-Path}]{\setlength{\rightskip}{0pt plus 5cm}void a\-\_\-star.\-follow\-\_\-test.\-Mover.\-clear\-Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1follow__test_1_1_mover_a90243b495db124b15fba9afc79cbcfcf}
+Clears the current path that the move is following, it will recalculate a path on the next call to \hyperlink{classa__star_1_1follow__test_1_1_mover_a86591ca1d9f386d394fc6f02cac8f15f}{act()} \hypertarget{classa__star_1_1follow__test_1_1_mover_ac197bf1d7788aeffec0e33dfa745c190}{\index{a\-\_\-star\-::follow\-\_\-test\-::\-Mover@{a\-\_\-star\-::follow\-\_\-test\-::\-Mover}!draw@{draw}}
+\index{draw@{draw}!a_star::follow_test::Mover@{a\-\_\-star\-::follow\-\_\-test\-::\-Mover}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void a\-\_\-star.\-follow\-\_\-test.\-Mover.\-draw (
+\begin{DoxyParamCaption}
+\item[{Graphics}]{g}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1follow__test_1_1_mover_ac197bf1d7788aeffec0e33dfa745c190}
+Draws the object to the given graphics
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interfacetest_1_1core_1_1_drawable_a98e7fd534ccd6c24dbaaee8bd9fb8e08}{test.\-core.\-Drawable}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/a\-\_\-star/follow\-\_\-test/Mover.\-java\end{DoxyCompactItemize}

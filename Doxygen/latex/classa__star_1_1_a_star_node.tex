@@ -1,0 +1,216 @@
+\hypertarget{classa__star_1_1_a_star_node}{\section{a\-\_\-star.\-A\-Star\-Node Class Reference}
+\label{classa__star_1_1_a_star_node}\index{a\-\_\-star.\-A\-Star\-Node@{a\-\_\-star.\-A\-Star\-Node}}
+}
+Inheritance diagram for a\-\_\-star.\-A\-Star\-Node\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classa__star_1_1_a_star_node}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classa__star_1_1_a_star_node_abf6a3d45b4c9304781df2971f24c72fc}{abstract boolean {\bfseries equals} (Object o)}\label{classa__star_1_1_a_star_node_abf6a3d45b4c9304781df2971f24c72fc}
+
+\item 
+abstract int \hyperlink{classa__star_1_1_a_star_node_a75c98195daaea78b4bf7c5c058cd792f}{hash\-Code} ()
+\item 
+abstract float \hyperlink{classa__star_1_1_a_star_node_a64cdac7457076efaf65485371d78b80e}{calculate\-H\-Score} (\hyperlink{classa__star_1_1_a_star_node}{A\-Star\-Node} end)
+\item 
+abstract float \hyperlink{classa__star_1_1_a_star_node_a2b653c71bec99f438a8c9037271bc98a}{calculate\-Move\-Cost} (\hyperlink{classa__star_1_1_a_star_node}{A\-Star\-Node} node)
+\item 
+abstract Iterable$<$ \hyperlink{classa__star_1_1_a_star_node}{A\-Star\-Node} $>$ \hyperlink{classa__star_1_1_a_star_node_a0472314423f1ff1956f0436f41c77bb6}{get\-Adjacent\-Nodes} ()
+\item 
+\hypertarget{classa__star_1_1_a_star_node_aa1a2db3a747ac0a2676b20984c246d73}{int {\bfseries compare\-To} (\hyperlink{classa__star_1_1_a_star_node}{A\-Star\-Node} node)}\label{classa__star_1_1_a_star_node_aa1a2db3a747ac0a2676b20984c246d73}
+
+\item 
+void \hyperlink{classa__star_1_1_a_star_node_a169258256c2ce25e28d7f6c4381869f5}{build\-Path} (Linked\-List$<$ \hyperlink{classa__star_1_1_a_star_node}{A\-Star\-Node} $>$ final\-Path)
+\item 
+void \hyperlink{classa__star_1_1_a_star_node_adceb6629155eb3ca1f779b9b179b2d2b}{clean} ()
+\item 
+float \hyperlink{classa__star_1_1_a_star_node_adcf900db191a0ecdf58d0fe1a84ae345}{get\-F\-Score} ()
+\item 
+float \hyperlink{classa__star_1_1_a_star_node_a285b5d342aee7592cf089218af146d7c}{get\-G\-Score} ()
+\item 
+void \hyperlink{classa__star_1_1_a_star_node_aedfb508aac1b1aec7626dcacfc87fa54}{set\-G\-Score} (float g\-Score)
+\item 
+float \hyperlink{classa__star_1_1_a_star_node_ae7d11e89196028b8b664aaac6296c9ee}{get\-H\-Score} ()
+\item 
+void \hyperlink{classa__star_1_1_a_star_node_a19627a0d4ac73deff6147cb5162fd4d3}{set\-H\-Score} (float h\-Score)
+\item 
+void \hyperlink{classa__star_1_1_a_star_node_aa3ce3d0f657b61e934e1b1b0a1cf3707}{set\-Parent} (\hyperlink{classa__star_1_1_a_star_node}{A\-Star\-Node} parent)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides the basic outline for implementing a graph structure, which can be used by the Pathing\-Algorithim.\-java a\-Star\-Path() method. By extending this class an providing correct functionality for the methods, this class will serve as a directed graph capable of finding the shortest path between 2 nodes
+
+\begin{DoxyAuthor}{Author}
+Nicholas 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classa__star_1_1_a_star_node_a169258256c2ce25e28d7f6c4381869f5}{\index{a\-\_\-star\-::\-A\-Star\-Node@{a\-\_\-star\-::\-A\-Star\-Node}!build\-Path@{build\-Path}}
+\index{build\-Path@{build\-Path}!a_star::AStarNode@{a\-\_\-star\-::\-A\-Star\-Node}}
+\subsubsection[{build\-Path}]{\setlength{\rightskip}{0pt plus 5cm}void a\-\_\-star.\-A\-Star\-Node.\-build\-Path (
+\begin{DoxyParamCaption}
+\item[{Linked\-List$<$ {\bf A\-Star\-Node} $>$}]{final\-Path}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1_a_star_node_a169258256c2ce25e28d7f6c4381869f5}
+After the shortest path has been calculated, this method puts the nodes into a list by traversing through the parents
+
+
+\begin{DoxyParams}{Parameters}
+{\em final\-Path} & the list to add the path to. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classa__star_1_1_a_star_node_a64cdac7457076efaf65485371d78b80e}{\index{a\-\_\-star\-::\-A\-Star\-Node@{a\-\_\-star\-::\-A\-Star\-Node}!calculate\-H\-Score@{calculate\-H\-Score}}
+\index{calculate\-H\-Score@{calculate\-H\-Score}!a_star::AStarNode@{a\-\_\-star\-::\-A\-Star\-Node}}
+\subsubsection[{calculate\-H\-Score}]{\setlength{\rightskip}{0pt plus 5cm}abstract float a\-\_\-star.\-A\-Star\-Node.\-calculate\-H\-Score (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-Star\-Node}}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classa__star_1_1_a_star_node_a64cdac7457076efaf65485371d78b80e}
+Given the destination node, this method returns a \char`\"{}guess\char`\"{} value of the distance between this node and the end node. This can be the manhatten distance (s.\-x -\/ e.\-x) + (s.\-y -\/ e.\-y) + ... or the as the bird flies distance, so long as it is consistent. Note that this doesn't actually improve pathing, but a better implementation makes the algorithm run faster
+
+
+\begin{DoxyParams}{Parameters}
+{\em end} & the final goal node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the guess distance to an end node 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classa__star_1_1example_1_1_a_star_mesh_a75d9ee659d5ce2c72b27c190b5352050}{a\-\_\-star.\-example.\-A\-Star\-Mesh}.
+
+\hypertarget{classa__star_1_1_a_star_node_a2b653c71bec99f438a8c9037271bc98a}{\index{a\-\_\-star\-::\-A\-Star\-Node@{a\-\_\-star\-::\-A\-Star\-Node}!calculate\-Move\-Cost@{calculate\-Move\-Cost}}
+\index{calculate\-Move\-Cost@{calculate\-Move\-Cost}!a_star::AStarNode@{a\-\_\-star\-::\-A\-Star\-Node}}
+\subsubsection[{calculate\-Move\-Cost}]{\setlength{\rightskip}{0pt plus 5cm}abstract float a\-\_\-star.\-A\-Star\-Node.\-calculate\-Move\-Cost (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-Star\-Node}}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classa__star_1_1_a_star_node_a2b653c71bec99f438a8c9037271bc98a}
+Given another node, this calculates the cost to move from this node to the given node. This can be done with computing distances, or by factoring in values from terrain features.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & the destination node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cost 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classa__star_1_1example_1_1_a_star_mesh_a61a6ccb2e73efe277bfa005ae4dc88a9}{a\-\_\-star.\-example.\-A\-Star\-Mesh}.
+
+\hypertarget{classa__star_1_1_a_star_node_adceb6629155eb3ca1f779b9b179b2d2b}{\index{a\-\_\-star\-::\-A\-Star\-Node@{a\-\_\-star\-::\-A\-Star\-Node}!clean@{clean}}
+\index{clean@{clean}!a_star::AStarNode@{a\-\_\-star\-::\-A\-Star\-Node}}
+\subsubsection[{clean}]{\setlength{\rightskip}{0pt plus 5cm}void a\-\_\-star.\-A\-Star\-Node.\-clean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1_a_star_node_adceb6629155eb3ca1f779b9b179b2d2b}
+Cleans up the path nodes after the pathing algorithm has been run. This is automatically called by Pathing\-Algorithm.\-a\-Star\-Path \hypertarget{classa__star_1_1_a_star_node_a0472314423f1ff1956f0436f41c77bb6}{\index{a\-\_\-star\-::\-A\-Star\-Node@{a\-\_\-star\-::\-A\-Star\-Node}!get\-Adjacent\-Nodes@{get\-Adjacent\-Nodes}}
+\index{get\-Adjacent\-Nodes@{get\-Adjacent\-Nodes}!a_star::AStarNode@{a\-\_\-star\-::\-A\-Star\-Node}}
+\subsubsection[{get\-Adjacent\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}abstract Iterable$<${\bf A\-Star\-Node}$>$ a\-\_\-star.\-A\-Star\-Node.\-get\-Adjacent\-Nodes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classa__star_1_1_a_star_node_a0472314423f1ff1956f0436f41c77bb6}
+Returns the nodes that can be traveled to from this node. Note\-: this is basically a directed graph.
+
+\begin{DoxyReturn}{Returns}
+A List of nodes that can be traveled to from this node 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classa__star_1_1example_1_1_a_star_mesh_a3a5180a2ce88218a07c40d022ab40dc9}{a\-\_\-star.\-example.\-A\-Star\-Mesh}.
+
+\hypertarget{classa__star_1_1_a_star_node_adcf900db191a0ecdf58d0fe1a84ae345}{\index{a\-\_\-star\-::\-A\-Star\-Node@{a\-\_\-star\-::\-A\-Star\-Node}!get\-F\-Score@{get\-F\-Score}}
+\index{get\-F\-Score@{get\-F\-Score}!a_star::AStarNode@{a\-\_\-star\-::\-A\-Star\-Node}}
+\subsubsection[{get\-F\-Score}]{\setlength{\rightskip}{0pt plus 5cm}float a\-\_\-star.\-A\-Star\-Node.\-get\-F\-Score (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1_a_star_node_adcf900db191a0ecdf58d0fe1a84ae345}
+\begin{DoxyReturn}{Returns}
+the f\-Score value (ie g\-Score + h\-Score) 
+\end{DoxyReturn}
+\hypertarget{classa__star_1_1_a_star_node_a285b5d342aee7592cf089218af146d7c}{\index{a\-\_\-star\-::\-A\-Star\-Node@{a\-\_\-star\-::\-A\-Star\-Node}!get\-G\-Score@{get\-G\-Score}}
+\index{get\-G\-Score@{get\-G\-Score}!a_star::AStarNode@{a\-\_\-star\-::\-A\-Star\-Node}}
+\subsubsection[{get\-G\-Score}]{\setlength{\rightskip}{0pt plus 5cm}float a\-\_\-star.\-A\-Star\-Node.\-get\-G\-Score (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1_a_star_node_a285b5d342aee7592cf089218af146d7c}
+\begin{DoxyReturn}{Returns}
+the g\-Score 
+\end{DoxyReturn}
+\hypertarget{classa__star_1_1_a_star_node_ae7d11e89196028b8b664aaac6296c9ee}{\index{a\-\_\-star\-::\-A\-Star\-Node@{a\-\_\-star\-::\-A\-Star\-Node}!get\-H\-Score@{get\-H\-Score}}
+\index{get\-H\-Score@{get\-H\-Score}!a_star::AStarNode@{a\-\_\-star\-::\-A\-Star\-Node}}
+\subsubsection[{get\-H\-Score}]{\setlength{\rightskip}{0pt plus 5cm}float a\-\_\-star.\-A\-Star\-Node.\-get\-H\-Score (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1_a_star_node_ae7d11e89196028b8b664aaac6296c9ee}
+\begin{DoxyReturn}{Returns}
+the h\-Score 
+\end{DoxyReturn}
+\hypertarget{classa__star_1_1_a_star_node_a75c98195daaea78b4bf7c5c058cd792f}{\index{a\-\_\-star\-::\-A\-Star\-Node@{a\-\_\-star\-::\-A\-Star\-Node}!hash\-Code@{hash\-Code}}
+\index{hash\-Code@{hash\-Code}!a_star::AStarNode@{a\-\_\-star\-::\-A\-Star\-Node}}
+\subsubsection[{hash\-Code}]{\setlength{\rightskip}{0pt plus 5cm}abstract int a\-\_\-star.\-A\-Star\-Node.\-hash\-Code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classa__star_1_1_a_star_node_a75c98195daaea78b4bf7c5c058cd792f}
+This method must be overridden so that nodes that are equal will return the same hashcode 
+
+Implemented in \hyperlink{classa__star_1_1example_1_1_a_star_mesh_a3b79dcad4042e9e52bb4def6bf3cd153}{a\-\_\-star.\-example.\-A\-Star\-Mesh}.
+
+\hypertarget{classa__star_1_1_a_star_node_aedfb508aac1b1aec7626dcacfc87fa54}{\index{a\-\_\-star\-::\-A\-Star\-Node@{a\-\_\-star\-::\-A\-Star\-Node}!set\-G\-Score@{set\-G\-Score}}
+\index{set\-G\-Score@{set\-G\-Score}!a_star::AStarNode@{a\-\_\-star\-::\-A\-Star\-Node}}
+\subsubsection[{set\-G\-Score}]{\setlength{\rightskip}{0pt plus 5cm}void a\-\_\-star.\-A\-Star\-Node.\-set\-G\-Score (
+\begin{DoxyParamCaption}
+\item[{float}]{g\-Score}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1_a_star_node_aedfb508aac1b1aec7626dcacfc87fa54}
+
+\begin{DoxyParams}{Parameters}
+{\em g\-Score} & the g\-Score to set \\
+\hline
+\end{DoxyParams}
+\hypertarget{classa__star_1_1_a_star_node_a19627a0d4ac73deff6147cb5162fd4d3}{\index{a\-\_\-star\-::\-A\-Star\-Node@{a\-\_\-star\-::\-A\-Star\-Node}!set\-H\-Score@{set\-H\-Score}}
+\index{set\-H\-Score@{set\-H\-Score}!a_star::AStarNode@{a\-\_\-star\-::\-A\-Star\-Node}}
+\subsubsection[{set\-H\-Score}]{\setlength{\rightskip}{0pt plus 5cm}void a\-\_\-star.\-A\-Star\-Node.\-set\-H\-Score (
+\begin{DoxyParamCaption}
+\item[{float}]{h\-Score}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1_a_star_node_a19627a0d4ac73deff6147cb5162fd4d3}
+
+\begin{DoxyParams}{Parameters}
+{\em h\-Score} & the h\-Score to set \\
+\hline
+\end{DoxyParams}
+\hypertarget{classa__star_1_1_a_star_node_aa3ce3d0f657b61e934e1b1b0a1cf3707}{\index{a\-\_\-star\-::\-A\-Star\-Node@{a\-\_\-star\-::\-A\-Star\-Node}!set\-Parent@{set\-Parent}}
+\index{set\-Parent@{set\-Parent}!a_star::AStarNode@{a\-\_\-star\-::\-A\-Star\-Node}}
+\subsubsection[{set\-Parent}]{\setlength{\rightskip}{0pt plus 5cm}void a\-\_\-star.\-A\-Star\-Node.\-set\-Parent (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-Star\-Node}}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1_a_star_node_aa3ce3d0f657b61e934e1b1b0a1cf3707}
+Sets the parent and updates the g\-Score;
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & the parent to set \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/a\-\_\-star/A\-Star\-Node.\-java\end{DoxyCompactItemize}

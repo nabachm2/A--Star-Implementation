@@ -1,0 +1,155 @@
+\hypertarget{classa__star_1_1example_1_1_a_star_mesh}{\section{a\-\_\-star.\-example.\-A\-Star\-Mesh Class Reference}
+\label{classa__star_1_1example_1_1_a_star_mesh}\index{a\-\_\-star.\-example.\-A\-Star\-Mesh@{a\-\_\-star.\-example.\-A\-Star\-Mesh}}
+}
+Inheritance diagram for a\-\_\-star.\-example.\-A\-Star\-Mesh\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classa__star_1_1example_1_1_a_star_mesh}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classa__star_1_1example_1_1_a_star_mesh_abc6eb8b50c6ab8e853c475d98165e431}{A\-Star\-Mesh} (Array\-List$<$ Point $>$ points)
+\item 
+void \hyperlink{classa__star_1_1example_1_1_a_star_mesh_ae1fffa184acad06f5764528e39b7315f}{add\-Point} (Point point)
+\item 
+\hypertarget{classa__star_1_1example_1_1_a_star_mesh_aae4c67360a8ea90a95c9895386c4ed48}{void {\bfseries draw} (Graphics g)}\label{classa__star_1_1example_1_1_a_star_mesh_aae4c67360a8ea90a95c9895386c4ed48}
+
+\item 
+\hypertarget{classa__star_1_1example_1_1_a_star_mesh_af87cd72d40a73cadd7bd479e01b79e0e}{void {\bfseries add\-Adjacent} (\hyperlink{classa__star_1_1example_1_1_a_star_mesh}{A\-Star\-Mesh} mesh)}\label{classa__star_1_1example_1_1_a_star_mesh_af87cd72d40a73cadd7bd479e01b79e0e}
+
+\item 
+\hypertarget{classa__star_1_1example_1_1_a_star_mesh_a7c329165ace0596ec8780163af782e4e}{boolean {\bfseries equals} (Object o)}\label{classa__star_1_1example_1_1_a_star_mesh_a7c329165ace0596ec8780163af782e4e}
+
+\item 
+int \hyperlink{classa__star_1_1example_1_1_a_star_mesh_a3b79dcad4042e9e52bb4def6bf3cd153}{hash\-Code} ()
+\item 
+float \hyperlink{classa__star_1_1example_1_1_a_star_mesh_a61a6ccb2e73efe277bfa005ae4dc88a9}{calculate\-Move\-Cost} (\hyperlink{classa__star_1_1_a_star_node}{A\-Star\-Node} node)
+\item 
+Array\-List$<$ \hyperlink{classa__star_1_1_a_star_node}{A\-Star\-Node} $>$ \hyperlink{classa__star_1_1example_1_1_a_star_mesh_a3a5180a2ce88218a07c40d022ab40dc9}{get\-Adjacent\-Nodes} ()
+\item 
+float \hyperlink{classa__star_1_1example_1_1_a_star_mesh_a75d9ee659d5ce2c72b27c190b5352050}{calculate\-H\-Score} (\hyperlink{classa__star_1_1_a_star_node}{A\-Star\-Node} end)
+\item 
+\hypertarget{classa__star_1_1example_1_1_a_star_mesh_a7e28f352d55099059192f07d2d34dc54}{void {\bfseries set\-Selected} (boolean selected)}\label{classa__star_1_1example_1_1_a_star_mesh_a7e28f352d55099059192f07d2d34dc54}
+
+\item 
+\hypertarget{classa__star_1_1example_1_1_a_star_mesh_a9af6e5662db762cb8c2bdc36d3d824ec}{Point2\-D {\bfseries get\-Center} ()}\label{classa__star_1_1example_1_1_a_star_mesh_a9af6e5662db762cb8c2bdc36d3d824ec}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An example of a mesh based graph, which implements \hyperlink{classa__star_1_1_a_star_node}{A\-Star\-Node}, and all the abstract methods. This class is more of an example of how to implement A\-Star\-Node.\-java for practical purposes
+
+\begin{DoxyAuthor}{Author}
+Nicholas 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classa__star_1_1example_1_1_a_star_mesh_abc6eb8b50c6ab8e853c475d98165e431}{\index{a\-\_\-star\-::example\-::\-A\-Star\-Mesh@{a\-\_\-star\-::example\-::\-A\-Star\-Mesh}!A\-Star\-Mesh@{A\-Star\-Mesh}}
+\index{A\-Star\-Mesh@{A\-Star\-Mesh}!a_star::example::AStarMesh@{a\-\_\-star\-::example\-::\-A\-Star\-Mesh}}
+\subsubsection[{A\-Star\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}a\-\_\-star.\-example.\-A\-Star\-Mesh.\-A\-Star\-Mesh (
+\begin{DoxyParamCaption}
+\item[{Array\-List$<$ Point $>$}]{points}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1example_1_1_a_star_mesh_abc6eb8b50c6ab8e853c475d98165e431}
+Creates a mesh from the given points/vertices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & An array of vertices \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classa__star_1_1example_1_1_a_star_mesh_ae1fffa184acad06f5764528e39b7315f}{\index{a\-\_\-star\-::example\-::\-A\-Star\-Mesh@{a\-\_\-star\-::example\-::\-A\-Star\-Mesh}!add\-Point@{add\-Point}}
+\index{add\-Point@{add\-Point}!a_star::example::AStarMesh@{a\-\_\-star\-::example\-::\-A\-Star\-Mesh}}
+\subsubsection[{add\-Point}]{\setlength{\rightskip}{0pt plus 5cm}void a\-\_\-star.\-example.\-A\-Star\-Mesh.\-add\-Point (
+\begin{DoxyParamCaption}
+\item[{Point}]{point}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1example_1_1_a_star_mesh_ae1fffa184acad06f5764528e39b7315f}
+Add the point to the list of vertices
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classa__star_1_1example_1_1_a_star_mesh_a75d9ee659d5ce2c72b27c190b5352050}{\index{a\-\_\-star\-::example\-::\-A\-Star\-Mesh@{a\-\_\-star\-::example\-::\-A\-Star\-Mesh}!calculate\-H\-Score@{calculate\-H\-Score}}
+\index{calculate\-H\-Score@{calculate\-H\-Score}!a_star::example::AStarMesh@{a\-\_\-star\-::example\-::\-A\-Star\-Mesh}}
+\subsubsection[{calculate\-H\-Score}]{\setlength{\rightskip}{0pt plus 5cm}float a\-\_\-star.\-example.\-A\-Star\-Mesh.\-calculate\-H\-Score (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-Star\-Node}}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classa__star_1_1example_1_1_a_star_mesh_a75d9ee659d5ce2c72b27c190b5352050}
+Given the destination node, this method returns a \char`\"{}guess\char`\"{} value of the distance between this node and the end node. This can be the manhatten distance (s.\-x -\/ e.\-x) + (s.\-y -\/ e.\-y) + ... or the as the bird flies distance, so long as it is consistent. Note that this doesn't actually improve pathing, but a better implementation makes the algorithm run faster
+
+
+\begin{DoxyParams}{Parameters}
+{\em end} & the final goal node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the guess distance to an end node 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classa__star_1_1_a_star_node_a64cdac7457076efaf65485371d78b80e}{a\-\_\-star.\-A\-Star\-Node}.
+
+\hypertarget{classa__star_1_1example_1_1_a_star_mesh_a61a6ccb2e73efe277bfa005ae4dc88a9}{\index{a\-\_\-star\-::example\-::\-A\-Star\-Mesh@{a\-\_\-star\-::example\-::\-A\-Star\-Mesh}!calculate\-Move\-Cost@{calculate\-Move\-Cost}}
+\index{calculate\-Move\-Cost@{calculate\-Move\-Cost}!a_star::example::AStarMesh@{a\-\_\-star\-::example\-::\-A\-Star\-Mesh}}
+\subsubsection[{calculate\-Move\-Cost}]{\setlength{\rightskip}{0pt plus 5cm}float a\-\_\-star.\-example.\-A\-Star\-Mesh.\-calculate\-Move\-Cost (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-Star\-Node}}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classa__star_1_1example_1_1_a_star_mesh_a61a6ccb2e73efe277bfa005ae4dc88a9}
+Given another node, this calculates the cost to move from this node to the given node. This can be done with computing distances, or by factoring in values from terrain features.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & the destination node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cost 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classa__star_1_1_a_star_node_a2b653c71bec99f438a8c9037271bc98a}{a\-\_\-star.\-A\-Star\-Node}.
+
+\hypertarget{classa__star_1_1example_1_1_a_star_mesh_a3a5180a2ce88218a07c40d022ab40dc9}{\index{a\-\_\-star\-::example\-::\-A\-Star\-Mesh@{a\-\_\-star\-::example\-::\-A\-Star\-Mesh}!get\-Adjacent\-Nodes@{get\-Adjacent\-Nodes}}
+\index{get\-Adjacent\-Nodes@{get\-Adjacent\-Nodes}!a_star::example::AStarMesh@{a\-\_\-star\-::example\-::\-A\-Star\-Mesh}}
+\subsubsection[{get\-Adjacent\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}Array\-List$<${\bf A\-Star\-Node}$>$ a\-\_\-star.\-example.\-A\-Star\-Mesh.\-get\-Adjacent\-Nodes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classa__star_1_1example_1_1_a_star_mesh_a3a5180a2ce88218a07c40d022ab40dc9}
+Returns the nodes that can be traveled to from this node. Note\-: this is basically a directed graph.
+
+\begin{DoxyReturn}{Returns}
+A List of nodes that can be traveled to from this node 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classa__star_1_1_a_star_node_a0472314423f1ff1956f0436f41c77bb6}{a\-\_\-star.\-A\-Star\-Node}.
+
+\hypertarget{classa__star_1_1example_1_1_a_star_mesh_a3b79dcad4042e9e52bb4def6bf3cd153}{\index{a\-\_\-star\-::example\-::\-A\-Star\-Mesh@{a\-\_\-star\-::example\-::\-A\-Star\-Mesh}!hash\-Code@{hash\-Code}}
+\index{hash\-Code@{hash\-Code}!a_star::example::AStarMesh@{a\-\_\-star\-::example\-::\-A\-Star\-Mesh}}
+\subsubsection[{hash\-Code}]{\setlength{\rightskip}{0pt plus 5cm}int a\-\_\-star.\-example.\-A\-Star\-Mesh.\-hash\-Code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classa__star_1_1example_1_1_a_star_mesh_a3b79dcad4042e9e52bb4def6bf3cd153}
+This method must be overridden so that nodes that are equal will return the same hashcode 
+
+Implements \hyperlink{classa__star_1_1_a_star_node_a75c98195daaea78b4bf7c5c058cd792f}{a\-\_\-star.\-A\-Star\-Node}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/a\-\_\-star/example/A\-Star\-Mesh.\-java\end{DoxyCompactItemize}

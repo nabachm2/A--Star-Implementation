@@ -1,0 +1,96 @@
+\hypertarget{classa__star_1_1follow__test_1_1_follower}{\section{a\-\_\-star.\-follow\-\_\-test.\-Follower Class Reference}
+\label{classa__star_1_1follow__test_1_1_follower}\index{a\-\_\-star.\-follow\-\_\-test.\-Follower@{a\-\_\-star.\-follow\-\_\-test.\-Follower}}
+}
+Inheritance diagram for a\-\_\-star.\-follow\-\_\-test.\-Follower\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classa__star_1_1follow__test_1_1_follower}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classa__star_1_1follow__test_1_1_follower_a59e6a2777b0e45310baaf5ce428fc711}{Follower} (\hyperlink{classtest_1_1core_1_1_test_panel}{Test\-Panel} main\-Window, Point2\-D start, Array\-List$<$ \hyperlink{classa__star_1_1follow__test_1_1_mover}{Mover} $>$ movers)
+\item 
+void \hyperlink{classa__star_1_1follow__test_1_1_follower_a7535656635da25bf0745b16c5ea3b6e1}{draw} (Graphics g)
+\item 
+\hypertarget{classa__star_1_1follow__test_1_1_follower_a923a5bb4c47cc6acf5c310393c611d23}{void {\bfseries clear\-Path} ()}\label{classa__star_1_1follow__test_1_1_follower_a923a5bb4c47cc6acf5c310393c611d23}
+
+\item 
+void \hyperlink{classa__star_1_1follow__test_1_1_follower_a2a826175f83c707904cd590e105981b5}{act} (float time\-Passed)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class was created to test the path finding of moving object. A \hyperlink{classa__star_1_1follow__test_1_1_follower}{Follower} looks for the closest \hyperlink{classa__star_1_1follow__test_1_1_mover}{Mover} within a given S\-E\-A\-R\-C\-H\-\_\-\-R\-A\-D\-I\-U\-S and if it finds one, it will follow it by continually updating its path
+
+\begin{DoxyAuthor}{Author}
+Nicholas 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classa__star_1_1follow__test_1_1_follower_a59e6a2777b0e45310baaf5ce428fc711}{\index{a\-\_\-star\-::follow\-\_\-test\-::\-Follower@{a\-\_\-star\-::follow\-\_\-test\-::\-Follower}!Follower@{Follower}}
+\index{Follower@{Follower}!a_star::follow_test::Follower@{a\-\_\-star\-::follow\-\_\-test\-::\-Follower}}
+\subsubsection[{Follower}]{\setlength{\rightskip}{0pt plus 5cm}a\-\_\-star.\-follow\-\_\-test.\-Follower.\-Follower (
+\begin{DoxyParamCaption}
+\item[{{\bf Test\-Panel}}]{main\-Window, }
+\item[{Point2\-D}]{start, }
+\item[{Array\-List$<$ {\bf Mover} $>$}]{movers}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1follow__test_1_1_follower_a59e6a2777b0e45310baaf5ce428fc711}
+Creates a follower at the given start position
+
+
+\begin{DoxyParams}{Parameters}
+{\em main\-Window} & reference to the test window \\
+\hline
+{\em start} & the start location \\
+\hline
+{\em movers} & a list of all movers \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classa__star_1_1follow__test_1_1_follower_a2a826175f83c707904cd590e105981b5}{\index{a\-\_\-star\-::follow\-\_\-test\-::\-Follower@{a\-\_\-star\-::follow\-\_\-test\-::\-Follower}!act@{act}}
+\index{act@{act}!a_star::follow_test::Follower@{a\-\_\-star\-::follow\-\_\-test\-::\-Follower}}
+\subsubsection[{act}]{\setlength{\rightskip}{0pt plus 5cm}void a\-\_\-star.\-follow\-\_\-test.\-Follower.\-act (
+\begin{DoxyParamCaption}
+\item[{float}]{time\-Passed}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1follow__test_1_1_follower_a2a826175f83c707904cd590e105981b5}
+Acts the object, using the amount of time\-Passed as a reference
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\-Passed} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interfacetest_1_1core_1_1_drawable_a683aa938b8c5ade02acc08f3bafca3f5}{test.\-core.\-Drawable}.
+
+\hypertarget{classa__star_1_1follow__test_1_1_follower_a7535656635da25bf0745b16c5ea3b6e1}{\index{a\-\_\-star\-::follow\-\_\-test\-::\-Follower@{a\-\_\-star\-::follow\-\_\-test\-::\-Follower}!draw@{draw}}
+\index{draw@{draw}!a_star::follow_test::Follower@{a\-\_\-star\-::follow\-\_\-test\-::\-Follower}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void a\-\_\-star.\-follow\-\_\-test.\-Follower.\-draw (
+\begin{DoxyParamCaption}
+\item[{Graphics}]{g}
+\end{DoxyParamCaption}
+)}}\label{classa__star_1_1follow__test_1_1_follower_a7535656635da25bf0745b16c5ea3b6e1}
+Draws the object to the given graphics
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interfacetest_1_1core_1_1_drawable_a98e7fd534ccd6c24dbaaee8bd9fb8e08}{test.\-core.\-Drawable}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/a\-\_\-star/follow\-\_\-test/Follower.\-java\end{DoxyCompactItemize}

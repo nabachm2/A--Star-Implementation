@@ -1,0 +1,55 @@
+\hypertarget{classa__star_1_1_pathing_algorithms}{\section{a\-\_\-star.\-Pathing\-Algorithms Class Reference}
+\label{classa__star_1_1_pathing_algorithms}\index{a\-\_\-star.\-Pathing\-Algorithms@{a\-\_\-star.\-Pathing\-Algorithms}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Linked\-List$<$ \hyperlink{classa__star_1_1_a_star_node}{A\-Star\-Node} $>$ \hyperlink{classa__star_1_1_pathing_algorithms_acb3c862843903d83cc1c5faaf81ade91}{a\-Star\-Path} (\hyperlink{classa__star_1_1_a_star_node}{A\-Star\-Node} start, \hyperlink{classa__star_1_1_a_star_node}{A\-Star\-Node} end)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class implements the A star pathing algorithm, see the following links for more details \href{http://www.gamedev.net/page/resources/_/technical/artificial-intelligence/a-pathfinding-for-beginners-r2003}{\tt http\-://www.\-gamedev.\-net/page/resources/\-\_\-/technical/artificial-\/intelligence/a-\/pathfinding-\/for-\/beginners-\/r2003} \href{http://en.wikipedia.org/wiki/A}{\tt http\-://en.\-wikipedia.\-org/wiki/\-A}$\ast$\-\_\-search\-\_\-algorithm
+
+\begin{DoxyAuthor}{Author}
+Nicholas 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classa__star_1_1_pathing_algorithms_acb3c862843903d83cc1c5faaf81ade91}{\index{a\-\_\-star\-::\-Pathing\-Algorithms@{a\-\_\-star\-::\-Pathing\-Algorithms}!a\-Star\-Path@{a\-Star\-Path}}
+\index{a\-Star\-Path@{a\-Star\-Path}!a_star::PathingAlgorithms@{a\-\_\-star\-::\-Pathing\-Algorithms}}
+\subsubsection[{a\-Star\-Path}]{\setlength{\rightskip}{0pt plus 5cm}static Linked\-List$<${\bf A\-Star\-Node}$>$ a\-\_\-star.\-Pathing\-Algorithms.\-a\-Star\-Path (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-Star\-Node}}]{start, }
+\item[{{\bf A\-Star\-Node}}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classa__star_1_1_pathing_algorithms_acb3c862843903d83cc1c5faaf81ade91}
+This implements the A$\ast$ pathing algorithm to find the shortest path between 2 nodes. If no path exists, this method returns null.
+
+The general overview for the algorithm is as follows\-: there is an open set of nodes that still are available for processing, and a closed set for nodes that have been processed and discarded. Then the algorithm uses the following steps
+
+1, Pop off the node with lowest f score from openset (current), add to closedset
+\begin{DoxyEnumerate}
+\item If current == end, terminate
+\item Else iterate through current's neighbors and if the are not in the closed or open set add to openset, set current as parent if already in openset, if current to neighbor is closer, set parent of neighbor to current
+\item Repeat!
+\end{DoxyEnumerate}
+
+Currently the implementation uses a hashset for the closedset (optimal) and a hashset for the open set (not optimal). Ideally the open set is a priority queue, however, the queue also needs to be able to handle value updates when the value is already in the queue, which no data structure provided by the Java standard framework provides. In c++ Boosts\-::multi\-\_\-array would be a good fit...
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & the start node \\
+\hline
+{\em end} & the end node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Linked\-List of nodes with the final path 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/a\-\_\-star/Pathing\-Algorithms.\-java\end{DoxyCompactItemize}
